@@ -7,9 +7,13 @@ const navMenu = document.getElementById('navMenu');
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     
+    // Update aria-expanded attribute
+    const isExpanded = navMenu.classList.contains('active');
+    menuToggle.setAttribute('aria-expanded', isExpanded);
+    
     // Animate hamburger icon
     const spans = menuToggle.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
+    if (isExpanded) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -161,9 +165,9 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
     
-    // Phone number validation (UAE format)
-    const phoneRegex = /^(\+971|00971|0)?[0-9]{9}$/;
-    if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
+    // Phone number validation (UAE format - flexible)
+    const phoneRegex = /^(\+971|00971|0)?[0-9]{8,10}$/;
+    if (!phoneRegex.test(formData.phone.replace(/[\s-]/g, ''))) {
         showNotification('الرجاء إدخال رقم هاتف صحيح', 'error');
         return;
     }
@@ -348,10 +352,6 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', () => {
     // Add loaded class to body for animations
     document.body.classList.add('loaded');
-    
-    // Log welcome message
-    console.log('%cشركة الريادة للخدمات الفنية', 'font-size: 24px; font-weight: bold; color: #1a5490;');
-    console.log('%cمرحباً بك في موقعنا!', 'font-size: 16px; color: #e67e22;');
 });
 
 // ============================================
