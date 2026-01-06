@@ -551,6 +551,81 @@ section {
 }
 
 /* ============================================
+   Improvements & Suggestions Section
+   ============================================ */
+.improvements {
+    background-color: var(--light-color);
+}
+
+.improvements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.improvement-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--spacing-md);
+    align-items: start;
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.improvement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--secondary-color);
+}
+
+.improvement-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.improvement-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.improvement-content p {
+    color: var(--gray);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.improvement-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-xs);
+}
+
+.improvement-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.improvement-list i {
+    color: var(--accent-color);
+}
+
+/* ============================================
    Locations Section
    ============================================ */
 .locations {
@@ -917,6 +992,19 @@ section {
     
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .improvements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .improvement-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .improvement-icon {
+        margin: 0 auto var(--spacing-sm) auto;
     }
     
     .locations-grid {
