@@ -128,6 +128,7 @@ prepareCardsForObserver(document.querySelectorAll('.service-card'));
 prepareCardsForObserver(document.querySelectorAll('.location-card'));
 prepareCardsForObserver(document.querySelectorAll('.contact-card'));
 prepareCardsForObserver(document.querySelectorAll('.improvement-card'));
+prepareCardsForObserver(document.querySelectorAll('.city-card'));
 
 // ============================================
 // Contact Form Handling
