@@ -115,32 +115,20 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all service cards
-const serviceCards = document.querySelectorAll('.service-card');
-serviceCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
-});
+const prepareCardsForObserver = (cards) => {
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+};
 
-// Observe location cards
-const locationCards = document.querySelectorAll('.location-card');
-locationCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
-});
-
-// Observe contact cards
-const contactCards = document.querySelectorAll('.contact-card');
-contactCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
-});
+prepareCardsForObserver(document.querySelectorAll('.service-card'));
+prepareCardsForObserver(document.querySelectorAll('.location-card'));
+prepareCardsForObserver(document.querySelectorAll('.contact-card'));
+prepareCardsForObserver(document.querySelectorAll('.improvement-card'));
+prepareCardsForObserver(document.querySelectorAll('.city-card'));
 
 // ============================================
 // Contact Form Handling

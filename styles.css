@@ -551,6 +551,223 @@ section {
 }
 
 /* ============================================
+   City Services (Dubai)
+   ============================================ */
+.city-services {
+    background: var(--white);
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--light-color);
+    color: var(--primary-color);
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.city-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.city-highlight {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.highlight-header h3 {
+    font-size: 1.6rem;
+    margin: var(--spacing-xs) 0;
+}
+
+.highlight-header p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.highlight-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+}
+
+.highlight-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.highlight-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.highlight-list i {
+    color: var(--secondary-color);
+}
+
+.city-cta {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.city-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    transition: var(--transition-normal);
+}
+
+.city-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-xl);
+}
+
+.city-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.city-card h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.2rem;
+}
+
+.city-card p {
+    color: var(--gray);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.city-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-xs);
+}
+
+.city-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.city-list i {
+    color: var(--accent-color);
+}
+
+/* ============================================
+   Improvements & Suggestions Section
+   ============================================ */
+.improvements {
+    background-color: var(--light-color);
+}
+
+.improvements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.improvement-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--spacing-md);
+    align-items: start;
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.improvement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--secondary-color);
+}
+
+.improvement-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.improvement-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.improvement-content p {
+    color: var(--gray);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.improvement-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-xs);
+}
+
+.improvement-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.improvement-list i {
+    color: var(--accent-color);
+}
+
+/* ============================================
    Locations Section
    ============================================ */
 .locations {
@@ -869,6 +1086,10 @@ section {
     .contact-info {
         grid-template-columns: 1fr 1fr;
     }
+    
+    .city-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -917,6 +1138,23 @@ section {
     
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .improvements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .improvement-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .improvement-icon {
+        margin: 0 auto var(--spacing-sm) auto;
+    }
+    
+    .city-highlight {
+        order: -1;
     }
     
     .locations-grid {
